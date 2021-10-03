@@ -2,5 +2,5 @@
 
 ## Technologies:
 
-- Node JS
+- Node JS (Typescript)
 - SQL (My SQL)
