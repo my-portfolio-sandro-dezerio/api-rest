@@ -14,13 +14,13 @@ export default class Database {
 			queueLimit: 0,
 			typeCast: function castField(field, useDefaultTypeCasting) {
 				if (field.type === "BIT" && field.length === 1) {
-				  var bytes = field.buffer();
+					var bytes = field.buffer();
 		
-				  return bytes[0] === 1;
+					return bytes[0] === 1;
 				}
 		
 				return useDefaultTypeCasting();
-			  },
+				},
 		})
 	}
 
@@ -28,13 +28,13 @@ export default class Database {
 		return new Promise((resolve, reject) => {
 			this.pool.getConnection((err, conn) => {
 				if (err) {
-					return reject(err);
+					return reject(new Error('Error al intentar conectar la base de datos.'));
 				}
 				conn.query(
 					queryString,
 					function (err: QueryError, rows: RowDataPacket, fields: FieldPacket) {
 						if (err) {
-							return reject(err);
+							return reject(new Error('Hubo un error en el servidor.'));
 						}
 						return resolve(rows);
 					}
