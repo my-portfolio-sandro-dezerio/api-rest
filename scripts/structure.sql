@@ -1,7 +1,3 @@
-CREATE SCHEMA IF NOT EXISTS `node_typescript`;
-
-USE `node_typescript`;
-
 CREATE TABLE `document_type` (
 	id VARCHAR(50) NOT NULL,
 	description VARCHAR(100) NOT NULL,

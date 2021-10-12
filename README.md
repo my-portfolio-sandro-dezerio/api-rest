@@ -44,6 +44,8 @@ Then, create a copy of .env.sample, rename it to .env and open to modify it:
   DATABASE (name of your database)
 ```
 
+Finally, run the script for creating tables in the schema that you just created.
+
 ## Launch:
 
 To run this project, use this command:
